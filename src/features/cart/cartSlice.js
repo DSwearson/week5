@@ -14,13 +14,17 @@ export const cartSlice = createSlice({
             console.log("This is the value passing in",action.payload)
             state.value = [...state.value, action.payload]
         },
+        emptyCart: (state, action) => {
+     
+            state.value = []
+        }
     }
 
 });
 
 //exporting actions to use
 //actions are methods or functions of things you can do
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, emptyCart } = cartSlice.actions;
 
 //this is the assignment for the store
 export const selectCart = (state) => state.cart.value;
